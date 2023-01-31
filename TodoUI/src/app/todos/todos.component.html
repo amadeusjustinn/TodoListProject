@@ -1,0 +1,38 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">To-do List</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-todo-form></app-todo-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Completed?</th>
+                    <th><!-- Update button --></th>
+                    <th><!-- Delete button --></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let todo of service.list">
+                    <td>{{todo.title}}</td>
+                    <td>{{todo.description}}</td>
+                    <td>{{todo.completed}}</td>
+                    <td>
+                        <i class="fa-regular fa-pen-to-square fa-lg" title="Edit this to-do"
+                            (click)="populateForm(todo)"></i>
+                    </td>
+                    <td>
+                        <i class="fa-regular fa-trash-alt fa-lg text-danger" title="Delete this to-do"
+                            (click)="onDelete(todo.id)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

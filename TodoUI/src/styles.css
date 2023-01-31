@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+.form-group label {
+    color: grey;
+}
+
+.form-group input {
+    font-weight: 500;
+}
+
+.form-group ::placeholder {
+    color: #c0bdbd;
+    font-weight: 300;
+    opacity: 1;
+}
+
+thead th {
+    font-weight: 400;
+}
+
+table tbody tr:hover {
+    background-color: #fffbf2;
+}
+
+/* For invalid form controls */
+.invalid {
+    border-color: red;
+    border-width: 0.1em;
+}
+
+/* For submit button */
+.form-group button {
+    background-color: #31d2f2;
+    border-color: #31d2f2;
+}
+
+.form-group button:hover {
+    background-color: #79e2f7;
+    border-color: #79e2f7;
+}
+
+.form-group button:disabled {
+    background-color: #898989;
+    border-color: #898989;
+}
+
+/* For toast */
+#toast-container>div {
+    opacity: 1;
+}
+
+/* For icons */
+i:hover {
+    cursor: pointer;
+}
