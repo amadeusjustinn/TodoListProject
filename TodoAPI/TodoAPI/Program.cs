@@ -14,11 +14,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<TodoContext>(options =>
     {
         // Uncomment line below to use in-memory database
-        //options.UseInMemoryDatabase("MyInMemoryDb");
+        options.UseInMemoryDatabase("MyInMemoryDb");
         // Uncomment line below to use local SQL server
-        options.UseSqlServer(
-            "Server=(localdb)\\MSSqlLocalDb;Database=TodoDB;Trusted_Connection=True;MultipleActiveResultSets=True;"
-        );
+        //options.UseSqlServer(
+        //    "Server=(localdb)\\MSSqlLocalDb;Database=TodoDB;Trusted_Connection=True;MultipleActiveResultSets=True;"
+        //);
     }
 );
 

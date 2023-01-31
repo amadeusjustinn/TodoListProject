@@ -7,6 +7,11 @@
         <app-todo-form></app-todo-form>
     </div>
     <div class="col-md-6">
+        <div class="filter-feature">
+            <input type="checkbox" name="filter" id="filter" (click)="onFilter()">&nbsp;
+            <label for="filter">Show uncompleted to-dos only</label>
+        </div>
+
         <table class="table">
             <thead class="thead-light">
                 <tr>

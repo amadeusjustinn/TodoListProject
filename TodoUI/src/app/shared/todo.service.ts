@@ -9,7 +9,10 @@ import { Todo } from './todo.model';
 export class TodoService {
     formData: Todo = new Todo();
     readonly baseURL: string = "https://localhost:7134/api/Todos";
+    filtering: boolean = false;
     list: Todo[] = [];
+    listAll: Todo[] = [];
+    listUncompleted: Todo[] = [];
 
     constructor(private http: HttpClient) { }
 
@@ -25,8 +28,20 @@ export class TodoService {
         return this.http.delete(`${this.baseURL}/${id}`);
     }
 
-    refreshList() {
+    async refreshList() {
         let getRes = this.http.get(this.baseURL);
-        lastValueFrom(getRes).then(res => this.list = res as Todo[]);
+        await lastValueFrom(getRes).then(res => this.listAll = res as Todo[]);
+        this.listUncompleted = this.listAll.filter(todo => !todo.completed);
+        this.filterList();
+    }
+
+    setFiltering(filtering: boolean) {
+        this.filtering = filtering;
+        this.filterList();
+    }
+
+    filterList() {
+        if (this.filtering) this.list = this.listUncompleted.slice();
+        else this.list = this.listAll.slice();
     }
 }

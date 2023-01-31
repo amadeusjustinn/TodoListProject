@@ -23,14 +23,18 @@ export class TodosComponent implements OnInit {
 
     onDelete(id: number) {
         if (confirm("Are you sure you want to delete this to-do?")) {
-            this.service.deleteTodo(id)
-                .subscribe({
-                    next: resp => {
-                        this.service.refreshList();
-                        this.toastr.error("To-do deleted successfully", "To-do");
-                    },
-                    error: err => { console.log(err); }
-                });
+            this.service.deleteTodo(id).subscribe({
+                next: resp => {
+                    this.service.refreshList();
+                    this.toastr.error("To-do deleted successfully", "To-do");
+                },
+                error: err => { console.log(err); }
+            });
         }
+    }
+
+    onFilter() {
+        let checkbox = document.getElementById("filter") as HTMLInputElement;
+        this.service.setFiltering(checkbox.checked);
     }
 }

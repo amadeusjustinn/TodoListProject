@@ -16,12 +16,12 @@
 
     <div class="form-group">
         <label>Task completed?</label><br>
-        <input class="form-check-input" type="radio" name="completed" [value]=false #completed="ngModel"
-            [(ngModel)]="service.formData.completed">&nbsp;
-        <label class="form-check-label">No ❌</label><br>
-        <input class="form-check-input" type="radio" name="completed" [value]=true #completed="ngModel"
-            [(ngModel)]="service.formData.completed">&nbsp;
-        <label class="form-check-label">Yes ✅</label>
+        <input class="form-check-input" type="radio" name="completed" id="complete-no" [value]=false
+            #completed="ngModel" [(ngModel)]="service.formData.completed">&nbsp;
+        <label for="complete-no" class="form-check-label">No ❌</label><br>
+        <input class="form-check-input" type="radio" name="completed" id="complete-yes" [value]=true
+            #completed="ngModel" [(ngModel)]="service.formData.completed">&nbsp;
+        <label for="complete-yes" class="form-check-label">Yes ✅</label>
     </div><br>
 
     <div class="form-group">

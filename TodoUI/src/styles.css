@@ -27,6 +27,13 @@ table tbody tr:hover {
     border-width: 0.1em;
 }
 
+/* For complete radio buttons */
+.form-group input#complete-no,
+.form-group input#complete-yes,
+.form-group .form-check-label {
+    cursor: pointer;
+}
+
 /* For submit button */
 .form-group button {
     background-color: #31d2f2;
@@ -41,6 +48,12 @@ table tbody tr:hover {
 .form-group button:disabled {
     background-color: #898989;
     border-color: #898989;
+}
+
+/* For filter */
+.filter-feature input,
+.filter-feature label {
+    cursor: pointer;
 }
 
 /* For toast */
